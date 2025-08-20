@@ -67,22 +67,22 @@ start_time = time.time()
 print("计算访问量……")
 sys.stdout.flush()
 # pypi
-pypi_heat_url = os.popen("cat %s | awk '{print $7}' | grep -E '\.whl$|\.gz$|\.egg$' | sort | uniq -c | awk '{if($1>=%s) print $2}'" % (pypi_full_log, 50)).read()
+pypi_heat_url = os.popen("cat %s | awk '{print $7}' | grep -E '\\.whl$|\\.gz$|\\.egg$' | sort | uniq -c | awk '{if($1>=%s) print $2}'" % (pypi_full_log, 50)).read()
 pypi_heat_url = pypi_heat_url.strip().split('\n')
 print("pypi链接数：%d" % len(pypi_heat_url))
 # anaconda
 anaconda_heat_url = os.popen(
-    "cat %s | grep 'GET /anaconda/' | awk '{print $7}' | grep -E '\.json$|\.exe$|\.bz2$|\.conda$|\.sh$|\.pkg$' | sort | uniq -c | awk '{if($1>=%s) print $2}'" % (mirrors_full_log, 100)).read()
+    "cat %s | grep 'GET /anaconda/' | awk '{print $7}' | grep -E '\\.json$|\\.exe$|\\.bz2$|\\.conda$|\\.sh$|\\.pkg$' | sort | uniq -c | awk '{if($1>=%s) print $2}'" % (mirrors_full_log, 100)).read()
 anaconda_heat_url = anaconda_heat_url.strip().split('\n')
 print("anaconda链接数：%d" % len(anaconda_heat_url))
 # kali
 kali_heat_url = os.popen(
-    "cat %s | grep 'GET /kali/' | awk '{print $7}' | grep -E '\.deb$|\.gz$' | sort | uniq -c | awk '{if($1>=%s) print $2}'" % (mirrors_full_log, 10)).read()
+    "cat %s | grep 'GET /kali/' | awk '{print $7}' | grep -E '\\.deb$|\\.gz$' | sort | uniq -c | awk '{if($1>=%s) print $2}'" % (mirrors_full_log, 10)).read()
 kali_heat_url = kali_heat_url.strip().split('\n')
 print("kail链接数：%d" % len(kali_heat_url))
 # ubuntu-ports
 ubuntu_ports_heat_url = os.popen(
-    "cat %s | grep 'GET /ubuntu-ports/' | awk '{print $7}' | grep -E '\.deb$|\.gz$' | sort | uniq -c | awk '{if($1>=%s) print $2}'" % (mirrors_full_log, 10)).read()
+    "cat %s | grep 'GET /ubuntu-ports/' | awk '{print $7}' | grep -E '\\.deb$|\\.gz$' | sort | uniq -c | awk '{if($1>=%s) print $2}'" % (mirrors_full_log, 10)).read()
 ubuntu_ports_heat_url = ubuntu_ports_heat_url.strip().split('\n')
 print("ubuntu-ports链接数：%d" % len(ubuntu_ports_heat_url))
 # gentoo

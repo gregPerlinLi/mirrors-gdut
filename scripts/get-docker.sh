@@ -314,8 +314,8 @@ check_forked() {
                 if [ "$lsb_release_exit_code" = "0" ]; then
                         # Print info about current distro
                         cat <<-EOF
-                        You're using '$lsb_dist' version '$dist_version'.
-                        EOF
+		You're using '$lsb_dist' version '$dist_version'.
+		EOF
 
                         # Get the upstream release info
                         lsb_dist=$(lsb_release -a -u 2>&1 | tr '[:upper:]' '[:lower:]' | grep -E 'id' | cut -d ':' -f 2 | tr -d '[:space:]')
@@ -323,8 +323,8 @@ check_forked() {
 
                         # Print info about upstream distro
                         cat <<-EOF
-                        Upstream release is '$lsb_dist' version '$dist_version'.
-                        EOF
+		Upstream release is '$lsb_dist' version '$dist_version'.
+		EOF
                 else
                         if [ -r /etc/debian_version ] && [ "$lsb_dist" != "ubuntu" ] && [ "$lsb_dist" != "raspbian" ]; then
                                 if [ "$lsb_dist" = "osmc" ]; then
@@ -374,7 +374,7 @@ do_install() {
                         files to match the parameters passed to the script.
 
                         You may press Ctrl+C now to abort this script.
-                EOF
+		EOF
                 ( set -x; sleep 20 )
         fi
 
@@ -390,7 +390,7 @@ do_install() {
                         cat >&2 <<-'EOF'
                         Error: this installer needs the ability to run commands as root.
                         We are unable to find either "sudo" or "su" available to make this happen.
-                        EOF
+		EOF
                         exit 1
                 fi
         fi
@@ -411,7 +411,7 @@ do_install() {
                 cat >&2 <<-'EOF'
 
                         You may press Ctrl+C now to abort this script.
-                EOF
+		EOF
                 ( set -x; sleep 20 )
         fi
 
@@ -676,7 +676,7 @@ do_install() {
                                                         openSUSE repository ($opensuse_repo) will be enabled now.
                                                         Do you wish to continue?
                                                         You may press Ctrl+C now to abort this script.
-                                                EOF
+										EOF
                                                 ( set -x; sleep 20 )
                                         fi
                                         $sh_c "zypper addrepo $opensuse_repo"
