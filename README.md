@@ -3,6 +3,7 @@
 http://mirrors.gdut.edu.cn/ 仅校园网可访问
 
 ![screenshot](screenshot.png)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FgregPerlinLi%2Fmirrors-gdut.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FgregPerlinLi%2Fmirrors-gdut?ref=badge_shield)
 
 [//]: # (镜像站初版于2019年7月28日上线，代码于2019年12月23日开源。)
 
@@ -666,3 +667,7 @@ server {
 |freebsd-ports|534G|https://www.freebsd.org/doc/en_US.ISO8859-1/articles/hubs/mirror-howto.html ||
 |fedora|1.13T|待google||
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FgregPerlinLi%2Fmirrors-gdut.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FgregPerlinLi%2Fmirrors-gdut?ref=badge_large)
